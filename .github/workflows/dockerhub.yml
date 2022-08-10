@@ -1,4 +1,4 @@
-name: 
+name: Custom-Airflow
 
 on:
   push:
@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: anku22/airflow:5.2 # Update the dockerhub_id, image_name and tag
+          tags: anku22/airflow:5.3 # TODO: Update the dockerhub_id, image_name and tag
