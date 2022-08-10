@@ -3,3 +3,4 @@ requests-html
 beautifulsoup4
 pymongo[srv]
 transformers
+torch
