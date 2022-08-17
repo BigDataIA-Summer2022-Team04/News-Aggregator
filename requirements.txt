@@ -2,5 +2,8 @@ requests
 requests-html
 beautifulsoup4
 pymongo[srv]
-transformers
-torch
+# transformers
+# torch # Processing running independently from airflow
+airflow-provider-great-expectations==0.1.1
+google-cloud-core
+google-cloud-storage
