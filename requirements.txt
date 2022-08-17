@@ -1,0 +1,14 @@
+google-cloud-bigquery==2.34.1
+fastapi
+uvicorn
+python-dotenv
+pyarrow
+ipykernel
+gunicorn
+sqlalchemy
+passlib
+python-jose
+bcrypt
+python-multipart
+pymongo[srv]
+twilio
