@@ -1,0 +1,166 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "nyt_raw_data_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "_id",
+          "section",
+          "subsection",
+          "title",
+          "abstract",
+          "uri",
+          "url",
+          "item_type",
+          "source",
+          "first_published_date",
+          "material_type_facet",
+          "multimedia",
+          "article_body",
+          "thumbnail"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 300,
+        "min_value": 0
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "_id"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "section"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "title"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "abstract"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "url"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "item_type"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "first_published_date"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "article_body"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "thumbnail"
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "output",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "nyt_scraping",
+          "limit": 1000
+        },
+        "citation_date": "2022-08-17T05:40:18.947622Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "columns": {
+      "_id": {
+        "description": ""
+      },
+      "abstract": {
+        "description": ""
+      },
+      "article_body": {
+        "description": ""
+      },
+      "first_published_date": {
+        "description": ""
+      },
+      "item_type": {
+        "description": ""
+      },
+      "material_type_facet": {
+        "description": ""
+      },
+      "multimedia": {
+        "description": ""
+      },
+      "section": {
+        "description": ""
+      },
+      "source": {
+        "description": ""
+      },
+      "subsection": {
+        "description": ""
+      },
+      "thumbnail": {
+        "description": ""
+      },
+      "title": {
+        "description": ""
+      },
+      "uri": {
+        "description": ""
+      },
+      "url": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.15.18"
+  }
+}
