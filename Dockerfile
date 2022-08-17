@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8090
 
-CMD ["gunicorn" ,"-w", "4", "-k", "uvicorn.workers.UvicornWorker" , "--bind", "0.0.0.0:8000", "main:app"]
+CMD ["gunicorn" ,"-w", "4", "-k", "uvicorn.workers.UvicornWorker" , "--bind", "0.0.0.0:8090", "main:app"]
