@@ -19,6 +19,8 @@ Access Swagger documentation at [link]()
 
 Tech: `Docker`
 
+Docker Image: (DockerHub)[https://hub.docker.com/repository/docker/anku22/news_agg_fastapi]
+
 Environment Variables:
 ```text
 TWILIO_SID
