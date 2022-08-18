@@ -20,7 +20,7 @@ from fastapi.staticfiles import StaticFiles
 # os.environ['TWILIO_TOKEN'] = ''
 # os.environ['MONGO_DB_USERNAME'] = ''
 # os.environ['MONGO_DB_PASSWORD'] = ''
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/keys/key.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '/keys/key2.json'
 
 
 logging.basicConfig(
