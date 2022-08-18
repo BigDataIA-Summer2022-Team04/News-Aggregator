@@ -1,0 +1,5 @@
+[global]
+dataFrameSerialization = "legacy"
+
+[server]
+port = 8095
