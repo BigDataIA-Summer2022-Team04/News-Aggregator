@@ -5,6 +5,7 @@ from fastapi import APIRouter, HTTPException, Response, status, Query, Depends
 import schemas
 from routers.oaut2 import get_current_user
 from twilio.rest import Client 
+from custom_functions import logfunc
 
 router = APIRouter(
     prefix="/notify",
@@ -22,27 +23,35 @@ async def personalized_section( news_title: str,
 
     Parameters
     ----------
-    file_loc : str
-        The file location of the spreadsheet
-    print_cols : bool, optional
-        A flag used to print the columns to the console (default is
-        False)
-
+    news_title : str
+        News Title
+    news_url : str
+        News Article URL
+    mobile: str
+        User mobile number
+    
     Returns
     -------
-    list
-        a list of strings used that are the header columns
+    None
     """
-    twilio_client = Client({os.environ['TWILIO_SID']}, {os.environ['TWILIO_TOKEN']})
-    # logging.debug(get_current_user.mobile)
+    account_sid = os.environ['TWILIO_SID']
+    auth_token  = os.environ['TWILIO_TOKEN']
+    twilio_client = Client(account_sid, auth_token )
+    
+    logging.debug(news_title)
+    logging.debug(news_url)
+    logging.debug(mobile)
+    
     try:
         message = twilio_client.messages.create( 
                                     from_='whatsapp:+14155238886',  
                                     body=f"""
                                     *{news_title}* \n{news_url}
                                     """,
-                                    to=f"whatsapp:+1{mobile}") 
+                                    to=f"whatsapp:+1{mobile}")
+        logfunc(get_current_user.email, "/NA/whatsApp/send_link", 200)
     except:
+        logfunc(get_current_user.email, "/NA/whatsApp/send_link", 400)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot Sent Whatsapp Message")
 

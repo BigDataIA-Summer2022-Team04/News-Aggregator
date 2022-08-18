@@ -8,6 +8,7 @@ import datetime
 import pymongo
 from bson.json_util import dumps
 import os
+from custom_functions import logfunc
 
 router = APIRouter(
     prefix="/mongodb",
@@ -38,8 +39,9 @@ async def get_weekly_stats(
     mycollection = mydb["processed"]
     try:
         query_output = mycollection.aggregate([
-            {
-                "$match": {"first_published_date": {'$gte': lastweek, '$lt': now}}},
+            # {
+            #     # "$match": {"first_published_date": {'$gte': lastweek, '$lt': now}}
+            # },
 
             {
                 "$group": {"_id": "$section",
@@ -49,8 +51,10 @@ async def get_weekly_stats(
                 "$sort": {'count': 1}
             }
         ])
+        logfunc(get_current_user.email, "/NA/mongodb/article_count", 200)
         return dumps(list(query_output))
     except:
+        logfunc(get_current_user.email, "/NA/mongodb/article_count", 400)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot retrieve time period stats document")
 
@@ -79,15 +83,52 @@ async def news_feed(news_section: str,
     try:
         query_output = mycollection.find(
             {"section": f"{news_section.title()}",
-            "users_red": {"$ne": f"{get_current_user.email}"}},
+            "users_red": {"$nin": [f"{get_current_user.email}"]},
+            "thumbnail": {"$ne" : ""}},
             {"_id": 1, "section": 1, "subsection": 1, "url": 1,
-                "language": 1, "first_published_date": 1}
+                "language": 1, "first_published_date": 1, "thumbnail": 1}
         ).sort('first_published_date', -1).limit(3)
-
+        logfunc(get_current_user.email, "/NA/mongodb/news_feed", 200)
         return list(query_output)
     except:
+        logfunc(get_current_user.email, "/NA/mongodb/news_feed", 400)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot retrieve article document")
+
+
+@router.get('/read_articles', status_code=status.HTTP_200_OK)
+async def read_articles(
+                    get_current_user: schemas.ServiceAccount = Depends(
+                        get_current_user)
+                    ):
+    """Gets list of articles read by user
+
+    Parameters
+    ----------
+    None
+        
+    Returns
+    -------
+    list
+        a dict which contains article data 
+    """
+    mongo_client = pymongo.MongoClient(
+        f"mongodb+srv://{os.environ['MONGO_DB_USERNAME']}:{os.environ['MONGO_DB_PASSWORD']}@news.xiubnpm.mongodb.net/?retryWrites=true&w=majority")
+    mydb = mongo_client["news"]
+    mycollection = mydb["processed"]
+    logging.debug(get_current_user.email)
+    try:
+        query_output = mycollection.find(
+            {"users_red": {"$in": [f"{get_current_user.email}"]}},
+            {"_id": 1, "section": 1, "url": 1,"language": 1}
+        ).sort('first_published_date', -1)
+        logfunc(get_current_user.email, "/NA/mongodb/read_articles", 200)
+        return list(query_output)
+    except:
+        logfunc(get_current_user.email, "/NA/mongodb/read_articles", 400)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot retrieve article document")
+
 
 
 @router.post('/mark_news_as_red', status_code=status.HTTP_200_OK)
@@ -117,7 +158,9 @@ async def mark_news_as_red(news_uid: str,
             {"_id": f"{news_uid}"},
             {"$addToSet": {"users_red": f"{get_current_user.email}"}}
         )
+        logfunc(get_current_user.email, "/NA/mongodb/mark_news_as_red", 200)
         return output.matched_count
     except:
+        logfunc(get_current_user.email, "/NA/mongodb/mark_news_as_red", 400)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot Update MongoDB")
