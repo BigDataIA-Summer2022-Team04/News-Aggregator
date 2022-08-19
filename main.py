@@ -53,7 +53,7 @@ if st.session_state['if_logged'] == True:
 if st.session_state['if_logged'] == False:
     st.markdown("""
                 # Welcome to News Aggregator,
-                ### Login or to Continue
+                ### Login or Signup to Continue
                 """)
     login_tab, signup_tab = st.tabs(["Login", "SignUp"])
     with login_tab:
@@ -84,8 +84,8 @@ if st.session_state['if_logged'] == False:
     with signup_tab:
         with st.form(key='signup', clear_on_submit=True):
             userfullname = st.text_input('Your Name')
-            im_number = st.text_input('Your IM Number')
-            username = st.text_input('Your Email ✉️')
+            im_number = st.text_input('Your IM Number', help="Whatsapp enabled number")
+            username = st.text_input('Your Email ✉️', help="User ID")
             password = st.text_input("Your Password", type="password")
             user_interest = st.multiselect(
             "Select one or more interest",
@@ -106,7 +106,7 @@ if st.session_state['if_logged'] == False:
                         # 'u.s.',
                         'universal',
                         'world'],
-            default=['automobiles', 'science', 'education'] )
+            default=['technology', 'science', 'health'] )
             submit = st.form_submit_button("Submit")
             if submit:
                 with st.spinner('Sending ...'):
@@ -133,7 +133,7 @@ if st.session_state['if_logged'] == True:
     st.markdown(f"""
     ### Hello {st.session_state['fullname'].split(' ')[0]}, Check out what's happening ..
     """)
-    lang_option = st.selectbox(label="Set a default Language", options=("English", "Hindi", "Chinese"), index=0)
+    lang_option = st.selectbox(label="Change Language", options=("English", "Hindi", "Chinese"), index=0)
     st.markdown(f"""
     ---
     """)
@@ -142,7 +142,7 @@ if st.session_state['if_logged'] == True:
     st.markdown(f"""
     #### Article Stats
 
-    Find out what topic are most discussed most
+    Find out what topic are discussed most
     """)
     
     # Count of Article
@@ -174,7 +174,7 @@ if st.session_state['if_logged'] == True:
     with st.container():
         st.markdown(f"""
             ---
-            #### Articles Read 
+            #### Articles Recently Read 
             """)
         with st.spinner('Fetching ...'):
             url = f"{BASE_API}/mongodb/read_articles"

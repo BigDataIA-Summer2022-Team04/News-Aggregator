@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          tags: anku22/news_agg_streamlit:5.1 # TODO: Update the dockerhub_id, image_name and tag
+          tags: anku22/news_agg_streamlit:5.3 # TODO: Update the dockerhub_id, image_name and tag
