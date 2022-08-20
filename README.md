@@ -10,6 +10,10 @@ News websites and applications are gradually being replaced by user-centric news
 * Streamlit - [link](http://34.73.35.12:8095/)
 * Website - [link](http://news.anandpiyush.com/)
 
+## Architecture
+
+![alt text](img/arch_v3.png)
+
 ## Source Code References
 
 1. Branch: **airflow** - [link](https://github.com/BigDataIA-Summer2022-Team04/News-Aggregator/tree/airflow)
