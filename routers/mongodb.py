@@ -4,11 +4,12 @@ from typing import Union
 from fastapi import APIRouter, HTTPException, Response, status, Query, Depends
 import schemas
 from routers.oaut2 import get_current_user
-import datetime
 import pymongo
 from bson.json_util import dumps
 import os
 from custom_functions import logfunc
+import pandas as pd
+from datetime import datetime, timedelta
 
 router = APIRouter(
     prefix="/mongodb",
@@ -31,14 +32,14 @@ async def get_weekly_stats(
     dataframe
         a dataframe with number of articles based on daily, weekly and monthly
     """
-    now = datetime.datetime.now().replace(microsecond=0)
-    lastweek = now - datetime.timedelta(days=7)
+    now = datetime.now().replace(microsecond=0)
+    lastweek = now - timedelta(days=7)
     mongo_client = pymongo.MongoClient(
         f"mongodb+srv://{os.environ['MONGO_DB_USERNAME']}:{os.environ['MONGO_DB_PASSWORD']}@news.xiubnpm.mongodb.net/?retryWrites=true&w=majority")
     mydb = mongo_client["news"]
     mycollection = mydb["processed"]
     try:
-        query_output = mycollection.aggregate([
+        query_output = list(mycollection.aggregate([
             # {
             #     # "$match": {"first_published_date": {'$gte': lastweek, '$lt': now}}
             # },
@@ -50,14 +51,59 @@ async def get_weekly_stats(
             {
                 "$sort": {'count': 1}
             }
-        ])
+        ]))
+        df = pd.DataFrame(query_output)
         logfunc(get_current_user.email, "/NA/mongodb/article_count", 200)
-        return dumps(list(query_output))
+        return Response(df.to_json(orient="records"), media_type="application/json")
     except:
         logfunc(get_current_user.email, "/NA/mongodb/article_count", 400)
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot retrieve time period stats document")
 
+def classify(row):
+    if row['days'] == 0:
+        return "today" 
+    elif -7 <= row['days'] <= -1:
+        return "last week"
+    else:
+        return "history"
+    
+@router.get('/news_stats', status_code=status.HTTP_200_OK)
+async def news_stats(
+                            get_current_user: schemas.ServiceAccount = Depends(get_current_user)
+                            ):
+    """Gets counts of articles based on daily, weekly and monthly timeframe
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    dataframe
+        a dataframe with number of articles based on daily, weekly and monthly
+    """
+    mongo_client = pymongo.MongoClient(
+        f"mongodb+srv://{os.environ['MONGO_DB_USERNAME']}:{os.environ['MONGO_DB_PASSWORD']}@news.xiubnpm.mongodb.net/?retryWrites=true&w=majority")
+    mydb = mongo_client["news"]
+    mycollection = mydb["processed"]
+    try:
+        query_output = list(mycollection.find({},{"_id": 0, "section":1, "first_published_date":1}))
+        df = pd.DataFrame(query_output)
+        logging.debug(f"Len of output {len(query_output)}")
+        # df = pd.DataFrame(list(query_output))
+        logging.debug(df.head(2))
+        df['days'] = (df['first_published_date'] - datetime.now()).dt.days
+        df['status'] = df.apply(classify, axis=1)
+        df2 = df.groupby(['section', 'status']).size().reset_index(name='count')
+        
+        logfunc(get_current_user.email, "/NA/mongodb/news_stats", 200)
+        logging.debug(df2.head(2))
+        return Response(df2.to_json(orient="records"), media_type="application/json")
+    except:
+        await logfunc(get_current_user.email, "/NA/mongodb/news_stats", 400)
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Cannot retrieve time period stats document")
 
 @router.get('/news_feed', status_code=status.HTTP_200_OK)
 async def news_feed(news_section: str,

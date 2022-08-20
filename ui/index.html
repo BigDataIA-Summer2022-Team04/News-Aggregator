@@ -3,10 +3,10 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="MaaS as a service assignment 03">
+      <meta name="description" content="News Aggregator">
       <meta name="author" content="Piyush">
       <title>News Aggregator</title>
-      <link rel="icon" type="image/x-icon" href="assets/imgs/favicon.png">
+      <link rel="icon" type="image/x-icon" href="assets/imgs/favicon-32x32.png">
       <!-- font icons -->
       <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
       <!-- Bootstrap + Creative Design main styles -->
@@ -29,15 +29,17 @@
                      <a class="nav-link" href="#about">Background</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#features">Design</a>
+                     <a class="nav-link" href="#architecture">Architecture</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#features">Data Pipeline</a>
                   </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#demo">Demo</a>
-                     </li>
+                  </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#testmonial">Try</a>
                   </li>
-
                   <li class="nav-item ml-md-4">
                      <a class="nav-link btn btn-primary" href="https://github.com/BigDataIA-Summer2022-Team04/News-Aggregator" target="_blank">Leave a ⭐️</a>
                   </li>
@@ -66,8 +68,7 @@
                   <h1></h1>
                </div>
                <div class="content">
-                  <h2 class="mb-3">Background</h2>
-
+                  <h2 class="mb-3">BACKGROUND</h2>
                   <!-- row -->
                   <div class="row">
                      <div class="col">
@@ -87,9 +88,9 @@
                            <h6>
                            <li>Deploy ML Models as API using FastAPI</li> </h6>
                            <h6><li>Build a Streamlit application for end users to interact with the Model</li> </h6>
-                        </ul> -->
+                           </ul> -->
                         <p>News websites and applications are gradually being replaced by user-centric news applications. One of the major reasons behind this change is that these apps provide a personalised experience to the users where they can get their desired content without having to go through the long list of articles.</p>
-                           <!-- <p><b>Adipisicing elit. Modi similique  iusto voluptatibus sint.</b></p>                        
+                        <!-- <p><b>Adipisicing elit. Modi similique  iusto voluptatibus sint.</b></p>                        
                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dignissimos modi molestias voluptas possimus perferendis saepe soluta accusantium, obcaecati neque quas ducimus, alias labore nesciunt atque ab voluptatibus quis! Molestiae dicta reprehenderit, quod laborum voluptatem laboriosam! Sapiente vel, fugiat voluptates.</p>
                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, quis!</p> -->
                      </div>
@@ -107,29 +108,91 @@
          </div>
          <!-- End of Container-->        
       </section>
+      <section id="architecture">
+         <!-- Container -->
+         <div class="container">
+            <!-- About wrapper -->
+            <div class="about-wrapper">
+               <div class="after">
+                  <h1></h1>
+               </div>
+               <div class="content">
+                  <h2 class="mb-3">ARCHITECTURE</h2>
+                  <!-- <h2 class="text-center pb-2">ARCHITECTURE</h2> -->
+                  <img src="assets/imgs/arch_v3.png" class="w-100" alt="About Us">
+                  <!-- <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://codelabs-preview.appspot.com/?file_id=1P-Xi5PIIHyq5mawC_BRJdVk84_XJbGEQhYMunsNA0p4#0" target="_blank" >Technical Documentation</a></button> -->
+                  <!-- <button class="btn btn-primary" type="button"><a href="http://34.73.35.12:8095/" target="_blank" >Technical Documentation</a></button>       -->
+               </div>
+            </div>
+            <!-- End of About Wrapper -->         
+         </div>
+         <!-- End of Container-->        
+      </section>
       <!--End of Section -->
       <section id="features">
          <!-- section -->
          <section>
             <!-- Container -->
             <div class="container">
-               <h2 class="text-center pb-2">Design</h2>
-               <h6 class="text-center pb-2">Data Augmentation: a technique to increase the diversity of your training set by applying random (but realistic) transformations, such as image rotation.</h6>
+               <h2 class="text-center" style="margin-top: -125px">DATA PIPELINE</h2>
+               <br>
+               <!-- <h2 class="text-center pb-2">DATA PIPELINE</h2> -->
+               <!-- <img src="assets/imgs/arch_v3.png" class="w-100" alt="About Us"> -->
+               <h6 class="text-center pb-2">In a data pipeline, data is moved from one point (the source) to another (the destination). At each point, the source data is transformed and optimized, arriving in a form that can be analyzed and utilised for business purposes.</h6>
                <!-- row -->
+               <br>
+               <br>
+               <br>
                <div class="row justify-content-between align-items-center">
                   <div class="col-md-6">
-                     <div class="img-wrapper">
-                        <div class="after"></div>
-                        <img src="assets/imgs/img-1.jpg" class="w-100" alt="About Us">
+                     <div class="img-wrapper" style="width: 110%; height: 110%;">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                           <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                 <img class="d-block w-100" src="assets/imgs/nyt_api.png" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/postman.png" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/beautifulsoup.png" alt="Third slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/ge.png" alt="Third slide">
+                              </div>
+                           </div>
+                           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Next</span>
+                           </a>
+                        </div>
                      </div>
                   </div>
                   <div class="col-md-5">
-                     <h6 class="title mb-3">Cutmix</h6>
-                     <p>CutMix is a data augmentation technique that addresses the issue of information loss and inefficiency present in regional dropout strategies. Instead of removing pixels and filling them with black or grey pixels or Gaussian noise, you replace the removed regions with a patch from another image, while the ground truth labels are mixed proportionally to the number of pixels of combined images.</p>
-                     <p class="text-muted">CutMix was proposed in CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features (Yun et al., 2019)</p>
-
-                     <p class="font-weight-bold">Model Accuracy of 81%</p>
-                     <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/cutmix.ipynb" target="_blank" >Notebook</a></button>
+                     <h6 class="title mb-3">Data Sourcing</h6>
+                     <!--
+                        For example, developers can search for all the articles published about a particular topic, or all the articles published by a particular author, most recent article, etc.
+                        
+                        
+                        
+                        Once the content is extracted, it is added along with article metadata for further processing.
+                        
+                        
+                        
+                        -->
+                     <li style="padding-bottom: 10px"> The <a href="https://developer.nytimes.com/">New York Times Developer Network</a> API allows to programmatically access New York Times data to extract information in a variety of ways. </li>
+                     <li style="padding-bottom: 10px"> To extract the relevant content from the article url, the html is parsed through a python library called <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">BeautifulSoup</a>. </li>
+                     <li> Ensuring quality of data sourcing, <a href="https://greatexpectations.io/">Great Expectations</a> reports enables checks and profiling of incoming data.</li>
+                     <!-- <li> The <a href="https://developer.nytimes.com/">New York Times Developer Network</a> API allows to programmatically access New York Times data</li>
+                        <p>CutMix is a data augmentation technique that addresses the issue of information loss and inefficiency present in regional dropout strategies. Instead of removing pixels and filling them with black or grey pixels or Gaussian noise, you replace the removed regions with a patch from another image, while the ground truth labels are mixed proportionally to the number of pixels of combined images.</p>
+                        <p class="text-muted">CutMix was proposed in CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features (Yun et al., 2019)</p>
+                        
+                        <p class="font-weight-bold">Model Accuracy of 81%</p>
+                        <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/cutmix.ipynb" target="_blank" >Notebook</a></button> -->
                      <!-- <button type="button"><a href="yourlink.com">Link link</a></button> -->
                   </div>
                </div>
@@ -145,20 +208,39 @@
                <!-- Row -->
                <div class="row justify-content-between align-items-center">
                   <div class="col-md-5">
-                     <h6 class="title mb-3">Mixup</h6>
-                     <p>The technique is quite systematically named - we are literally mixing up the features and their corresponding labels. Implementation-wise it's simple. Neural networks are prone to memorizing corrupt labels. mixup relaxes this by combining different features with one another (same happens for the labels too) so that a network does not get overconfident about the relationship between the features and their labels. </p>
-                     <p>Mixup is specifically useful when we are not sure about selecting a set of augmentation transforms for a given dataset, medical imaging datasets, for example. mixup can be extended to a variety of data modalities such as computer vision, natural language processing, speech, and so on.</p>
-                     <p class="text-muted">mixup is a domain-agnostic data augmentation technique proposed in mixup: Beyond Empirical Risk Minimization by Zhang et al.</p>
-                     <!-- <button class="btn btn-outline-primary btn-sm">Learn More</button>
-                        -->
-                        <p class="font-weight-bold">Model Accuracy of 89%</p>
-                        <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/mixup.ipynb" target="_blank" >Notebook</a></button>
-                        <!-- <button type="button"><a href="yourlink.com">Link link</a></button> -->
+                     <h6 class="title mb-3">Data Processing</h6>
+                     <li style="padding-bottom: 10px">Pre-trained NLP models from <a href="https://huggingface.co/">Hugging Face</a> are leveraged to summarize and translate article text. These summarization and translation are a key for users for making sense of large article.</li>
+                     <li style="padding-bottom: 10px"> Automate and orchestrate the execution of Python code on regular basis, <a href="https://airflow.apache.org/">Apache Airflow</a> DAG are configured to run daily as data sourcing jobs.</li>
+                     <li>Data are processed and stored in <a href="https://www.mongodb.com/atlas/">MongoDB</a>, which provides the ability to build upon flexible schemas and operate much faster than a relational database.</li>
                   </div>
                   <div class="col-md-6">
-                     <div class="img-wrapper">
+                     <div class="img-wrapper" style="width: 110%; height: 110%;">
                         <div class="after right"></div>
-                        <img src="assets/imgs/img-2.jpg" class="w-100" alt="About Us">
+                        <!-- <img src="assets/imgs/img-2.jpg" class="w-100" alt="About Us"> -->
+                        <div id="carouselDataProcessing" class="carousel slide" data-ride="carousel">
+                           <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                 <img class="d-block w-100" src="assets/imgs/hf.png" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/airflow.png" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/airflow_dag.png" alt="Third slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/mongodb.png" alt="Third slide">
+                              </div>
+                           </div>
+                           <a class="carousel-control-prev" href="#carouselDataProcessing" role="button" data-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="carousel-control-next" href="#carouselDataProcessing" role="button" data-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Next</span>
+                           </a>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -167,7 +249,6 @@
             <!-- End of Container-->      
          </section>
          <!-- End of Section -->
-         
          <!-- Section -->
          <section>
             <!-- Container -->
@@ -175,18 +256,44 @@
                <!-- Row -->
                <div class="row justify-content-between align-items-center">
                   <div class="col-md-6">
-                     <div class="img-wrapper">
-                        <div class="after"></div>
-                        <img src="assets/imgs/img-4.jpg" class="w-100" alt="About us">
+                     <div class="img-wrapper" style="width: 110%; height: 110%;">
+                        <div id="carouselDataasaService" class="carousel slide" data-ride="carousel">
+                           <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                 <img class="d-block w-100" src="assets/imgs/fastapi.png" alt="First slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/signup.png" alt="Second slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/stats.png" alt="Third slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/news.png" alt="Third slide">
+                              </div>
+                              <div class="carousel-item">
+                                 <img class="d-block w-100" src="assets/imgs/wa.png" alt="Third slide">
+                              </div>
+                           </div>
+                           <a class="carousel-control-prev" href="#carouselDataasaService" role="button" data-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="carousel-control-next" href="#carouselDataasaService" role="button" data-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Next</span>
+                           </a>
+                        </div>
                      </div>
                   </div>
                   <div class="col-md-5">
-                     <h6 class="title mb-3">Augmix</h6>
-                     <p>AugMix, a data processing technique that mixes augmented images and enforces consistent embeddings of the augmented images, which results in increased robustness and improved uncertainty calibration. AugMix does not require tuning to work correctly, as with random cropping or CutOut, and thus enables plug-and-play data augmentation. AugMix significantly improves robustness and uncertainty measures on challenging image classification benchmarks, closing the gap between previous methods and the best possible performance by more than half in some cases. With AugMix, we obtain state-of-the-art on ImageNet-C, ImageNet-P and in uncertainty estimation when the train and test distribution do not match</p>
-                     <p class="text-muted">AugMix technique proposed: A Simple Data Processing Method to Improve Robustness and Uncertainty by Hendrycks, Dan and Mu, Norman and Cubuk, Ekin D. and Zoph, Barret and Gilmer, Justin and Lakshminarayanan, Balaji.</p>
-                     <p class="font-weight-bold">Model Accuracy of __%</p>
-                        <button class="btn btn-outline-primary btn-sm" type="button"><a href="https://github.com/BigDataIA-Summer2022-Team04/Assignment_03/blob/main/notebooks/augmix.ipynb" target="_blank" >Notebook</a></button>
-                     <!-- <button class="btn btn-outline-primary btn-sm">Learn More</button> -->
+                     <h6 class="title mb-3">Data as a Service</h6>
+                     <li style="padding-bottom: 10px">Create REST interface using <a href="https://fastapi.tiangolo.com/">Fast API</a> to call commonly used functions to implement applications functionality of User Registration and Authentication,
+                        Retrieve article data from MongoDB,
+                        Record User Read activity into BigQuery,
+                        Send Article on IM.
+                     </li>
+                     <li>Using <a href="https://streamlit.io/">Streamlit</a>'s simple framework to build interactive web application.</li>
                   </div>
                </div>
                <!-- End of Row -->           
@@ -195,7 +302,7 @@
          </section>
          <!-- End of Section --> 
          <!-- Features Section -->
-         <section class="has-bg-img" id="demo">
+         <!-- <section class="has-bg-img" id="demo">
             <a data-toggle="modal" href="#exampleModalCenter">
                 <i></i>
             </a>
@@ -205,36 +312,63 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                          <iframe width="100%" height="450px" class="border-0" 
-                        src="https://www.youtube.com/embed/tgbNyZ7vqY?controls=0">
+                        src="https://www.youtube.com/embed/JtLXPtBOw-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         </iframe>
                     </div>
                 </div>
             </div>   
-            </section>
+            </section> -->
          <!-- End of features Section -->    
+      </section>
+      <section id="demo">
+         <!-- Container -->
+         <div class="container">
+            <!-- About wrapper -->
+            <div class="about-wrapper">
+               <div class="after">
+                  <h1></h1>
+               </div>
+               <div class="content">
+                  <h2 class="mb-3">DEMO</h2>
+                  <iframe width="100%" height="450px" class="border-0" 
+                     src="https://www.youtube.com/embed/JtLXPtBOw-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  </iframe>
+                  <!-- <h2 class="text-center pb-2">ARCHITECTURE</h2> -->
+                  <!-- <img src="assets/imgs/arch_v3.png" class="w-100" alt="About Us"> -->
+               </div>
+            </div>
+            <!-- End of About Wrapper -->         
+         </div>
+         <!-- End of Container-->        
       </section>
       <!-- Testmonial Section -->
       <section class="text-center pt-5" id="testmonial">
          <!-- Container -->
          <div class="container">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               <strong></strong> I am running low on free GCP credits, the apps links may no longer work. Watch the video above.
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
             <h3 class="mt-3 mb-5 pb-5">Try It Out</h3>
             <!-- Row -->
             <div class="row">
                <div class="col-sm-10 col-md-4 m-auto">
                   <div class="testmonial-wrapper">
                      <img src="assets/imgs/avatar3.jpg" alt="Request Access">
-                     <h6 class="title mb-3">Request Access</h6>
-                     <p>Fill up this form to request access.</p>
+                     <h6 class="title mb-3">CodeLab Doc</h6>
+                     <p>Detailed Technical Documentation</p>
                      <!-- <button class="btn btn-link btn-outline-dark"><a href="https://arxiv.org/abs/1912.02781" target="_blank" >Fill Now</a></button> -->
-                     <button class="btn btn-dark" type="button"><a href="https://forms.office.com/r/Hg6LfjhrXc" target="_blank" >Register</a></button>
+                     <button class="btn btn-dark" type="button"><a href="https://codelabs-preview.appspot.com/?file_id=1P-Xi5PIIHyq5mawC_BRJdVk84_XJbGEQhYMunsNA0p4#0" target="_blank" >Visit</a></button>
                   </div>
                </div>
                <div class="col-sm-10 col-md-4 m-auto">
                   <div class="testmonial-wrapper">
                      <img src="assets/imgs/avatar1.jpg" alt="Client Image">
-                     <h6 class="title mb-3">API Documentation</h6>
+                     <h6 class="title mb-3">FastAPI Doc</h6>
                      <p>Public API User Documentation.</p>
-                     <button class="btn btn-dark" type="button"><a href="https://maasapi.anandpiyush.com/docs" target="_blank" >Visit</a></button>
+                     <button class="btn btn-dark" type="button"><a href="http://34.73.35.12:8090/docs" target="_blank" >Visit</a></button>
                      <!-- <button class="btn btn-danger" ><a href="https://maasapi.anandpiyush.com/docs" target="_blank" >Visit</a></button> -->
                   </div>
                </div>
@@ -242,9 +376,9 @@
                   <div class="testmonial-wrapper">
                      <img src="assets/imgs/avatar2.jpg" alt="Client Image">
                      <h6 class="title mb-3">Web App</h6>
-                     <p>Try it out, Go ahead and upload an image.</p>
+                     <p>Try it out, Go ahead and enjoy reading.</p>
                      <!-- <button class="btn btn-outline-dark">Visit</button> -->
-                     <button class="btn btn-dark" type="button"><a href="https://qachecker.anandpiyush.com/" target="_blank" >Visit</a></button>
+                     <button class="btn btn-dark" type="button"><a href="http://34.73.35.12:8095/" target="_blank" >Visit</a></button>
                      <!-- <button class="btn btn-link btn-outline-dark" type="button"><a href="https://qachecker.anandpiyush.com" target="_blank">Visit</a></button> -->
                      <!-- <button class="btn btn-link btn-outline-dark"><a href="https://qachecker.anandpiyush.com" target="_blank" >Visit</a></button> -->
                   </div>
@@ -277,8 +411,10 @@
                   <li class="list-body">
                      <div class="row">
                         <div class="col">
-                           <a href="https://maasapi.anandpiyush.com/docs" target="_blank">API Doc</a>
-                           <a href="https://qachecker.anandpiyush.com/" target="_blank">Streamlit</a>
+                           <a href="https://developer.nytimes.com/" target="_blank">New York Times API</a>
+                           <a href="http://34.73.35.12:8090/docs" target="_blank">FastAPI Doc</a>
+                           <a href="http://34.73.35.12:8095/" target="_blank">Streamlit</a>
+                           <a href="https://codelabs-preview.appspot.com/?file_id=1P-Xi5PIIHyq5mawC_BRJdVk84_XJbGEQhYMunsNA0p4#0" target="_blank">CodeLab Doc</a>
                            <a href="https://github.com/BigDataIA-Summer2022-Team04/News-Aggregator" target="_blank">GitHub</a>
                            <!-- <a href="#">Link 2</a>
                               <a href="#">Link 3</a>

@@ -12,3 +12,5 @@ bcrypt
 python-multipart
 pymongo[srv]
 twilio
+pandas
+pytest

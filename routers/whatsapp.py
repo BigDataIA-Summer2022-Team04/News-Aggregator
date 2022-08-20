@@ -50,6 +50,7 @@ async def personalized_section( news_title: str,
                                     """,
                                     to=f"whatsapp:+1{mobile}")
         logfunc(get_current_user.email, "/NA/whatsApp/send_link", 200)
+        return "Success"
     except:
         logfunc(get_current_user.email, "/NA/whatsApp/send_link", 400)
         raise HTTPException(
