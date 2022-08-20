@@ -1,23 +1,23 @@
-# News-Aggregator
+# News-Aggregator 🗞
 
-## Abstract
+## Abstract 📝
 News websites and applications are gradually being replaced by user-centric news applications. One of the major reasons behind this change is that these apps provide a personalized experience to the users where they can get their desired content without having to go through the long list of articles.
 
-## Links
+## Links 📎
 * Codelab Doc - [link](https://codelabs-preview.appspot.com/?file_id=1P-Xi5PIIHyq5mawC_BRJdVk84_XJbGEQhYMunsNA0p4#0)
 * Airflow - [link](http://34.73.35.12:8080/)
 * FastAPI Doc - [link](http://34.73.35.12:8090/docs)
 * Streamlit - [link](http://34.73.35.12:8095/)
 * Website - [link](http://news.anandpiyush.com/)
 
-## Architecture
+## Architecture 👷🏻‍♂️
 
 ![alt text](img/arch_v3.png)
 
 
 ---
 
-## Source Code References
+## Source Code References 💻
 
 1. Branch: **airflow** - [link](https://github.com/BigDataIA-Summer2022-Team04/News-Aggregator/tree/airflow)
    1. Web Scraping DAG
@@ -112,13 +112,13 @@ News websites and applications are gradually being replaced by user-centric news
 
 ---
 
-## Team Member
+## Team Member 👩🏻‍💻 👨🏻‍💻
 1. Jui Chavan - [Linkedin](https://www.linkedin.com/in/juichavan/) - [Email](chavan.ju@northeastern.edu)
 2. Piyush Anand - [Linkedin](https://www.linkedin.com/in/anandpiyush/) - [Email](anand.pi@northeastern.edu)
 
 
 
-## Individual Contribution
+## Individual Contribution ⚖️
 
 | **Developer** 	|          **Deliverables**          	|
 |:-------------:	|:----------------------------------:	|
@@ -133,11 +133,11 @@ News websites and applications are gradually being replaced by user-centric news
 |     Piyush    	| Technical Documentation            	|
 |     Piyush    	| Infra Deployment                   	|
 
-## Endnotes
+## Endnotes 👮🏻‍♂️
 
 > WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
 
-**Contribution**: 
+**Contribution**: 🤝
 *   Jui &ensp; &emsp;: `40%`
 *   Piyush : `60%`
 
