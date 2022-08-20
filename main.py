@@ -148,24 +148,25 @@ if st.session_state['if_logged'] == True:
     # Count of Article
     with st.container():
         with st.spinner('Analyzing ...'):
-            url = f"{BASE_API}/mongodb/weekly"
+            url = f"{BASE_API}/mongodb/news_stats"
             headers = {}
             headers['Authorization'] = f"Bearer {st.session_state['access_token']}"
             response = requests.request("GET", url, headers=headers)
             if response.status_code == 200:
-                json_data = json.loads(response.text)
-                df = pd.read_json(json_data)
+                df = pd.read_json(response.text)
                 fig = px.bar(df, 
-                            x = df['_id'], 
-                            y = df['count'],
-                            hover_data=['count'],
-                            color='count', 
+                            x = 'section', 
+                            y = 'count',
+                            hover_data=['status', 'count'],
+                            barmode="stack",
+                            color='section',
+                            pattern_shape="status",
                             title="Article Count",
                             labels={'count':'Count of Articles',
-                                    '_id':'Article Section'
+                                    'section':'Article Section'
                                     },
-                            text_auto=True
-                            )
+                            # text_auto=True
+                        )
                 st.plotly_chart(fig)
             else:
                 st.error("Error response")
