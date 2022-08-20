@@ -4,11 +4,11 @@
 News websites and applications are gradually being replaced by user-centric news applications. One of the major reasons behind this change is that these apps provide a personalized experience to the users where they can get their desired content without having to go through the long list of articles.
 
 ## Links 📎
-* Codelab Doc - [link](https://codelabs-preview.appspot.com/?file_id=1P-Xi5PIIHyq5mawC_BRJdVk84_XJbGEQhYMunsNA0p4#0)
-* Airflow - [link](http://34.73.35.12:8080/)
-* FastAPI Doc - [link](http://34.73.35.12:8090/docs)
-* Streamlit - [link](http://34.73.35.12:8095/)
-* Website - [link](http://news.anandpiyush.com/)
+* 📕 Codelab Doc - [link](https://codelabs-preview.appspot.com/?file_id=1P-Xi5PIIHyq5mawC_BRJdVk84_XJbGEQhYMunsNA0p4#0)
+* 🛠 Airflow - [link](http://34.73.35.12:8080/)
+* 📡 FastAPI Doc - [link](http://34.73.35.12:8090/docs)
+* 📊 Streamlit - [link](http://34.73.35.12:8095/)
+* 🖥 Website - [link](http://news.anandpiyush.com/)
 
 ## Architecture 👷🏻‍♂️
 
