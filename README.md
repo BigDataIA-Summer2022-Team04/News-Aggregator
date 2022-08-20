@@ -14,6 +14,9 @@ News websites and applications are gradually being replaced by user-centric news
 
 ![alt text](img/arch_v3.png)
 
+
+---
+
 ## Source Code References
 
 1. Branch: **airflow** - [link](https://github.com/BigDataIA-Summer2022-Team04/News-Aggregator/tree/airflow)
@@ -107,12 +110,13 @@ News websites and applications are gradually being replaced by user-centric news
     └── requirements.txt
     ```
 
-
-
+---
 
 ## Team Member
 1. Jui Chavan - [Linkedin](https://www.linkedin.com/in/juichavan/) - [Email](chavan.ju@northeastern.edu)
 2. Piyush Anand - [Linkedin](https://www.linkedin.com/in/anandpiyush/) - [Email](anand.pi@northeastern.edu)
+
+
 
 ## Individual Contribution
 
@@ -131,6 +135,10 @@ News websites and applications are gradually being replaced by user-centric news
 
 ## Endnotes
 
-WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
+> WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
 
-Contribution: Jui: 40%  Piyush: 60%
+**Contribution**: 
+*   Jui &ensp; &emsp;: `40%`
+*   Piyush : `60%`
+
+---
