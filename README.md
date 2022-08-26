@@ -17,6 +17,8 @@ News websites and applications are gradually being replaced by user-centric news
   <img src="img/demo_thumbnail.png" width="500" >
 </a>
 
+---
+
 ## Architecture 👷🏻‍♂️
 
 ![alt text](img/arch_v3.png)
@@ -140,7 +142,7 @@ News websites and applications are gradually being replaced by user-centric news
 |     Piyush    	| Technical Documentation            	|
 |     Piyush    	| Infra Deployment                   	|
 
-## Endnotes 👮🏻‍♂️
+## Undertaking 👮🏻‍♂️
 
 > WE ATTEST THAT WE HAVEN’T USED ANY OTHER STUDENTS’ WORK IN OUR ASSIGNMENT AND ABIDE BY THE POLICIES LISTED IN THE STUDENT HANDBOOK
 
