@@ -10,6 +10,13 @@ News websites and applications are gradually being replaced by user-centric news
 * 📊 Streamlit - [link](http://34.73.35.12:8095/)
 * 🖥 Website - [link](http://news.anandpiyush.com/)
 
+
+## Video Demo on YouTube 🎬
+
+<a href="https://www.youtube.com/watch?v=JtLXPtBOw-U">
+  <img src="img/demo_thumbnail.png" width="500" >
+</a>
+
 ## Architecture 👷🏻‍♂️
 
 ![alt text](img/arch_v3.png)
